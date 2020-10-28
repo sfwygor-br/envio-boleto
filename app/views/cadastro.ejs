@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/basicstyle.css">
+		<script src="js/jquery.js"></script>
+	</head>
+	<body>
+		<div>
+			<div>			
+                <form method="post" action="/cadastrar">
+                    <h2>Autenticação</h2>
+                    <p>
+                        <label for="usuario">Usuário</label> <input type="text" id="usuario" name="usuario" placeholder="usuario"><br>
+                        <label for="senha">Senha</label> <input type="password" id="senha" name="senha" placeholder="senha"><br>
+                        <label for="nome">Nome</label> <input type="nome" id="nome" name="nome" placeholder="Nome"><br>
+                    </p>
+                    <h2>Segurança</h2>
+                    <p>
+                        <label for="chave_acesso">Chave de acesso</label> <input type="text" id="chave_acesso" name="chave_acesso" placeholder="Chave de acesso">    
+                    </p>
+                    <h2>Email</h2>
+                    <p>
+                        <label for="smtp_host">Servidor</label> <input type="text" id="smtp_host" name="smtp_host" placeholder="Servidor smtp"><br>    
+                        <label for="smtp_porta">Porta</label> <input type="text" id="smtp_porta" name="smtp_porta" placeholder="Porta servidor smtp"><br>   
+                        <label for="smtp_email">Email</label> <input type="email" id="smtp_email" name="smtp_email" placeholder="Email servidor smtp"><br>   
+                        <label for="smtp_senha">Senha</label> <input type="password" id="smtp_senha" name="smtp_senha" placeholder="Senha servidor smtp"><br>   
+                    </p>
+                    <input type="submit" value="Cadastrar">
+				</form>				
+			</div>
+		</div>
+	</body>
+</html>

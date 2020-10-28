@@ -12,7 +12,12 @@
 	</head>
 	<body>
 		<div>
-		  <h2> Boletos prontos para envio </h2>
+			<nav>				
+				<a href="/dashboard">Dashboard</a>
+				<a href="/configuracao">Configurações</a>
+			</nav>	
+			<hr>
+		  	<h2> Boletos prontos para envio </h2>
 			<table style="width:50%; text-align:center;">
 				<tr>
 					<th>Data de upload</th>
@@ -28,10 +33,11 @@
 					<td><a href="http://localhost:81/api/<%= boleto[i]._id %>" target="_blank"><%= boleto[i].boleto %></a> </td>					
 				</tr>
 				<%   } %>
+				<% } else { %>
+				<h3>Nenhum boleto encontrado</h3>
 				<% } %>
-				
 			</table>
-			<input type="button" id="" value="Enviar boletos">
+			<a href="/emailBoleto">Enviar boletos</a>
 		</div>
 	</body>
 </html>
