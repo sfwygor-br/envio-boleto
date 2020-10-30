@@ -71,15 +71,9 @@ app.get('/api/:id', function(req, res){
 				if(err){
 					res.json(err);
 				} else {
-					console.log(results[0]);
-					const path = 'app/public/uploads/' + results[0].boleto;
-					console.log(path);
-					fs.readFile(path, function (err,data){
-						res.contentType("application/pdf");
-						res.send(data);
-					 });
-
-					//res.status(200).json(results);
+					let data = fs.readFileSync(results[0].url_pdf);
+					res.contentType("application/pdf");
+					res.send(data);
 				}
 				mongoclient.close();
 			});

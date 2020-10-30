@@ -61,7 +61,7 @@ boletoDAO.prototype.enviarEmailBoleto = function(req, res){
 								attachments: [attachment] 
 					};
 					
-					await transport.sendMail(message, function(err){
+					transport.sendMail(message, function(err){
 						if(!err){
 							console.log('email sent');
 						} else {
@@ -78,13 +78,14 @@ boletoDAO.prototype.enviarEmailBoleto = function(req, res){
 						}
 					});
 
+					/*
 					//unlink pdf
 					fs.unlink(result[i].url_pdf, function(err){
 						if(err){
 							console.log(err);
 						}
 					})
-					
+					*/
 					
 				}			
 
