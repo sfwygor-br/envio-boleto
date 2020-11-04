@@ -64,6 +64,22 @@ app.post('/api', upload.any(), function(req, res){
 
 });
 
+app.get('/api/configuracoes/:cpf', function(req, res){
+	conexao.open( function(err, mongoclient){
+		mongoclient.collection('configuracao', function(err, collection){
+			collection.find({"cpf" : req.params.cpf}).toArray(function(err, results){
+				if(err){
+					res.json(err);
+				} else {				
+					res.json(results[0]);
+				}
+				mongoclient.close();
+			});
+		});
+	});
+
+});
+
 app.get('/api/:id', function(req, res){
 	conexao.open( function(err, mongoclient){
 		mongoclient.collection('boleto', function(err, collection){
