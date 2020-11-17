@@ -7,10 +7,10 @@ Um produto escriba para atender as necessidades de gerencimento dos cartórios b
 Projeto para Escriba Informática com a proposta de evolução dos atuais sistemas de gerencimento do cartório.
 
 ### INSTALAÇÃO LOCAL
-• Instale o Node JS;
-• Instale o banco de dados MongoDB;
-• Em seu servidor local baixe o projeto usando `git clone`;
-• Instale as dependências através do `npm install`;
+* Instale o Node JS;
+* Instale o banco de dados MongoDB;
+* Em seu servidor local baixe o projeto usando `git clone`;
+* Instale as dependências através do `npm install`;
 
 ### CONVENÇÕES
 Convenções adotadas no ambiente de trabalho para o projeto EscribaFin:
