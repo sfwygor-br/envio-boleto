@@ -18,26 +18,28 @@
 			</nav>	
 			<hr>
 		  	<h2> Boletos prontos para envio </h2>
+			<% if (boleto.length > 0){ %>
 			<table style="width:50%; text-align:center;">
 				<tr>
 					<th>Data de upload</th>
 					<th>Destinatário</th>
 					<th> Link para visualização <th>
 				</tr>
-				
-				<% if (boleto.length > 0){ %>
+							
 				<%   for(i = 0; i < boleto.length; i++){ %>
 				<tr>
 					<td><%= boleto[i].upload %></td>
 					<td><%= boleto[i].destinatario %></td>
 					<td><a href="http://localhost:81/api/<%= boleto[i]._id %>" target="_blank"><%= boleto[i].boleto %></a> </td>					
 				</tr>
-				<%   } %>
-				<% } else { %>
-				<h3>Nenhum boleto encontrado</h3>
-				<% } %>
+				<%   } %>				
 			</table>
-			<a href="/emailBoleto">Enviar boletos</a>
+			<a href="/emailBoleto">Enviar boletos</a> 
+			<% } else { %> 
+			<div style="text-align: center; padding: 10px; color: white; background-color: grey; widht: 100%">
+				<h3>Nenhum boleto encontrado</h3>
+			</div>
+			<% } %>			
 		</div>
 	</body>
 </html>
