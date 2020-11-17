@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended:true }));
 app.use(bodyParser.json());
 
 app.listen(81);
-
+/*
 let conexao = new mongodb.Db(
 	'escriba',
 	new mongodb.Server(
@@ -98,4 +98,4 @@ app.get('/api/:id', function(req, res){
 
 });
 
-
+*/
