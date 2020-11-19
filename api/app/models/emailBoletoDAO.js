@@ -27,7 +27,7 @@ emailBoletoDAO.prototype.createEmailBoleto = function (boleto_dados, res) {
                 mongoclient.close();
             });
         })
-    })
+    });
 }
 
 emailBoletoDAO.prototype.readEmailBoletoId = function (id, res){
