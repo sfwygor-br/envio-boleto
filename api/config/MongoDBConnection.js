@@ -1,6 +1,6 @@
 ﻿let mongo = require('mongodb');
 
-let con = function(){
+let conexao = function(){
 	let db = new mongo.Db(
 			'escriba',
 			new mongo.Server(
@@ -14,5 +14,5 @@ let con = function(){
 }
 
 module.exports = function(){
-	return con;
+	return conexao;
 }
