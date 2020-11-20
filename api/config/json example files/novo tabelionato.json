@@ -1,0 +1,26 @@
+{
+    "tabelionato": "Nome do Tabelionato",
+    "endereco": "Endereço do Tabelionato",
+    "telefone": "(XX) XXXXX-XXXX",
+    "tabeliao": "Nome do Tabelião",
+    "cpf": "000.000.001-91",
+    "servidorSMTP": [
+        {
+            "host": "hostsmtp",
+            "porta": 578,
+            "autententicacao": false,
+            "usuario": "email_usuario",
+            "senha": "senha_usuario"
+        }
+    ],
+    "envioBoleto": [
+        {
+            "envioAutomatico": true
+        }
+    ],
+    "seguranca": [
+        {
+            "segredo1": "segredo"
+        }
+    ]
+}

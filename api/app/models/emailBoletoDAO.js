@@ -1,4 +1,4 @@
-var ObjectID = require('mongodb').ObjectId;
+let ObjectID = require('mongodb').ObjectId;
 let fs = require('fs');
 
 function emailBoletoDAO(conexao){
@@ -40,7 +40,7 @@ emailBoletoDAO.prototype.readEmailBoletoId = function (id, res){
 		mongoclient.collection('emailBoleto', (err, collection) => {
             if (err) {
                 console.log('Erro ao abrir collection => '+ err);
-                return
+                return;
             }
 
 			collection.find(objectId(id)).toArray((err, results) => {
