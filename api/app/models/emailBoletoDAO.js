@@ -1,5 +1,6 @@
-let ObjectID = require('mongodb').ObjectId;
+let objectID = require('mongodb').ObjectId;
 let fs = require('fs');
+let path = require('path');
 
 function emailBoletoDAO(conexao){
     this._conexao = conexao();
@@ -43,11 +44,13 @@ emailBoletoDAO.prototype.readEmailBoletoId = function (id, res){
                 return;
             }
 
-			collection.find(objectId(id)).toArray((err, results) => {
+			collection.find(objectID(id)).toArray((err, results) => {
+                
 				if(err){
 					res.json(err);
 				} else {
-					let data = fs.readFileSync(results[0].url_pdf);
+                    let arquivoDir = path.normalize(path.join(__dirname, '../public/uploads/' + results[0].boleto_pdf)); 
+					let data = fs.readFileSync(arquivoDir);
 					res.contentType("application/pdf");
 					res.send(data);
 				}
