@@ -20,7 +20,7 @@ emailBoletoDAO.prototype.createEmailBoleto = function (boleto_dados, res) {
             }
 
             collection.insert(boleto_dados, (err, records) => {
-                if(err){
+                if(err){                    
                     res.json({'status' : 'erro', 'dados' : err});
                 } else {
                     res.json({'status' : 'despacho de boleto por e-mail adicionado à lista', 'dados' : boleto_dados});
