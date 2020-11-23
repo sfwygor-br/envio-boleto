@@ -32,6 +32,7 @@ tabelionatoDAO.prototype.readTabelionatoId = function(id, res){
     if (id == 'null'){
         res.status(201);
         res.json({'status' : 'parâmetro id não informado'});
+        return;
     }
     this._conexao.open((err, mongoclient) => {
         if (err) {
@@ -48,13 +49,12 @@ tabelionatoDAO.prototype.readTabelionatoId = function(id, res){
             }
 
             collection.find(objectID(id)).toArray((err, results) => {
-                console.log(results[0]);
 				if(err){
 					res.json({'status' : 'erro', 'dados' : err});
 				} else {
                     res.status(200);
 					res.json({'status' : 'registro de tabelionato encontrado', 'dados' : results[0]});
-				}
+                }                
 			});
         });    
     });
