@@ -29,6 +29,10 @@ tabelionatoDAO.prototype.createTabelionato = function(tabelionato_dados, res){
 }
 
 tabelionatoDAO.prototype.readTabelionatoId = function(id, res){
+    if (id == 'null'){
+        res.status(201);
+        res.json({'status' : 'parâmetro id não informado'});
+    }
     this._conexao.open((err, mongoclient) => {
         if (err) {
             console.log('Erro ao abrir conexão => '+ err);
@@ -37,7 +41,9 @@ tabelionatoDAO.prototype.readTabelionatoId = function(id, res){
 
         mongoclient.collection('tabelionato', (err, collection) => {            
             if (err) {
-                console.log('Erro ao abrir collection => '+ err);
+                console.log('Erro ao abrir collection => '+ err);                
+                res.status(201);
+                res.json({'status' : 'informação de tabelionato não encontrada', 'dados' : err});
                 return;
             }
 
@@ -46,7 +52,8 @@ tabelionatoDAO.prototype.readTabelionatoId = function(id, res){
 				if(err){
 					res.json({'status' : 'erro', 'dados' : err});
 				} else {
-					res.json({'status' : 'registro de tabelionato encontrado', 'dados' : results});
+                    res.status(200);
+					res.json({'status' : 'registro de tabelionato encontrado', 'dados' : results[0]});
 				}
 			});
         });    
