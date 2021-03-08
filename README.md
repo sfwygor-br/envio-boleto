@@ -1,10 +1,4 @@
-# SISTEMA DE GERENCIAMENTO DE CARTÓRIO ESCRIBA
-
-### O QUE É
-Um produto escriba para atender as necessidades de gerencimento dos cartórios brasileiros.
-
-### A QUEM SE DESTINA / OBJETIVO
-Projeto para Escriba Informática com a proposta de evolução dos atuais sistemas de gerencimento do cartório.
+# Controle de envio de boleto
 
 ### INSTALAÇÃO LOCAL
 * Instale o Node JS;
